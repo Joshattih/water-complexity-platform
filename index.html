@@ -500,6 +500,24 @@
         </h2>
         <p style="text-align: center; color: #6b7c93; margin-bottom: 40px;">
             Click the visualization to see how water stress propagates
+            <!-- Pattern Visualization -->
+<section class="pattern-section">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 20px;">
+        Complexity Patterns in Real-Time
+    </h2>
+    <p style="text-align: center; color: #6b7c93; margin-bottom: 40px;">
+        Click the visualization to see how water stress propagates
+    </p>
+    
+    <!-- ADD THIS NEW DIV HERE -->
+    <div style="text-align: center; margin-bottom: 40px;">
+        <a href="analysis.html" style="padding: 15px 35px; background: linear-gradient(135deg, #00a8ff 0%, #0ff 100%); color: #000; border-radius: 50px; font-size: 1.1rem; font-weight: 600; text-decoration: none; display: inline-block;">
+            📊 Analyze Water Stress Patterns
+        </a>
+    </div>
+    
+    <canvas id="complexityCanvas"></canvas>
+</section>            
         </p>
         <canvas id="complexityCanvas"></canvas>
     </section>
@@ -534,6 +552,7 @@
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="real-data-fetcher.js"></script>
+    <script src="live-water-monitor.js"></script>
     <script>
         // Create animated particles
         function createParticles() {
@@ -744,7 +763,7 @@
         }
         
         // Update statistics
-        function updateStats() {
+        /*function updateStats() {
             document.getElementById('globalCoverage').textContent = '147';
             document.getElementById('criticalZones').textContent = '18';
             document.getElementById('dataPoints').textContent = '2.3M';
@@ -770,14 +789,14 @@
                 animateValue(document.getElementById('criticalZones'), 0, 18, 1500);
             }, 1000);
         }
-        
+        */
         // Initialize everything
         window.addEventListener('load', () => {
             createParticles();
             initMap();
             generateCrisisCards();
             initComplexityCanvas();
-            updateStats();
+            //updateStats();//
             
             // Hide loading screen
             setTimeout(() => {
